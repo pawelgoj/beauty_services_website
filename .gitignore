@@ -2,6 +2,13 @@
 __pycache__/
 *.py[cod]
 *$py.class
+# venv
+**/beauty_app_venv
+
+# react 
+**/build
+**/node_modules
+package-lock.json
 
 # C extensions
 *.so

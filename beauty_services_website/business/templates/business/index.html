@@ -1,0 +1,20 @@
+{# Tak ładujemy pliki z z folderu static np. CSS #}
+{% load static %}
+
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="{% static 'business/style.css' %}">
+</head>
+
+<body>
+    <img src="{% static 'blog/images/logo.jpg' %}" alt="logo" />
+    <h1>Moje usługi</h1>
+    <a href="{% url 'blog:index' %}">Mój blog</a>
+
+</body>
+
+</html>

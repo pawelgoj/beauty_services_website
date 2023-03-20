@@ -1,0 +1,29 @@
+{# Tak ładujemy pliki z z folderu static np. CSS #}
+{% load static %}
+
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+</head>
+
+<body>
+    <img src="{% static 'blog/images/logo.jpg' %}" alt="logo" />
+    <h1>Blog</h1>
+    <ul>
+        {% for post in posts %}
+        <li>{{post.title}}</li>
+
+        {% endfor %}
+    </ul>
+    <div>
+        <!--Tak możemy formatować dane wyjściowe-->
+        <span>{{2.43435435 | floatformat:2}}</span>
+    </div>
+
+</body>
+
+</html>
