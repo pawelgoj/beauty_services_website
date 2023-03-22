@@ -31,7 +31,7 @@ class SocialMedia(models.Model):
     def __str__(self):
         return self.name
 
-class Clients(models.Model):
+class Client(models.Model):
     name = models.CharField(max_length=100)
     surname = models.CharField(max_length=100, blank=True)
     phone = models.CharField(max_length=15, blank=True)
@@ -41,3 +41,10 @@ class Clients(models.Model):
 
     def __str__(self):
         return f'{self.name} {self.surname}'
+    
+    
+class Appointments(models.Model):
+    client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    date = models.DateTimeField(auto_now_add=False)
+    place = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
