@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
-    'business.apps.BusinessConfig'
+    'business.apps.BusinessConfig',
+    'gallery.apps.GalleryConfig'
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # add folder with output data from react
         'DIRS': [
-                os.path.join(BASE_DIR, 'frontend/build')
+                os.path.join(BASE_DIR, 'templates'),
+                os.path.join(BASE_DIR, 'frontend/build'),
             ],
         'APP_DIRS': True,
         'OPTIONS': {

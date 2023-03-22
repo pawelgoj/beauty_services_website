@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Service, Contact, SocialMedia, Client, Appointments
+from .models import Service, Contact, SocialMedia, Client, Appointment
 
 # Register your models here.
 # możemy dodaćkolumny które widzi administrator 
@@ -20,7 +20,7 @@ class SocialMediaAdmin(admin.ModelAdmin):
 class ClientAdmin(admin.ModelAdmin):
     list_display = ('name',)
     
-@admin.register(Appointments)
+@admin.register(Appointment)
 class ClientAdmin(admin.ModelAdmin):
     list_display = ('client', 'date')
 
