@@ -1,0 +1,11 @@
+#bootstrap-overrides-logo {
+    font-family: Edwardian Script ITC;
+    color: rgb(211, 173, 21);
+    font-size: 40px;
+    font-weight: 550;
+}
+
+#bootstrap-overrides-navbar {
+    background: rgb(86,9,121);
+    background: linear-gradient(45deg, rgba(86,9,121,1) 21%, rgba(0,108,255,1) 95%);;
+}
