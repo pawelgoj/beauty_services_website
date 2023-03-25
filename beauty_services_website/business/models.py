@@ -32,6 +32,7 @@ class Contact(models.Model):
 class SocialMedia(models.Model):
     name = models.CharField(max_length=100, verbose_name="Nazwa")
     link = models.CharField(max_length=200, verbose_name="Link")
+    image = models.ImageField(max_length=200, verbose_name="Logo", blank=True)
     description = models.CharField(max_length=200, verbose_name="Opis")
 
     class Meta:
@@ -66,3 +67,18 @@ class Appointment(models.Model):
     class Meta:
         verbose_name_plural = "Terminy umówione"
         verbose_name = "Termin"
+        
+        
+class AboutMe(models.Model):
+    aboutme_id = models.AutoField(primary_key=True)
+    image = models.ImageField(max_length=200, verbose_name="Moje zdjęcie", blank=True)
+    text = models.TextField(verbose_name="Opis")
+    class Meta:
+        verbose_name_plural = "O mnie"
+        verbose_name = "O mnie"
+        constraints = [
+            models.CheckConstraint(check=models.Q(aboutme_id=1), name='one instance'),
+        ]
+        
+    def __str__(self):
+        return 'O mnie'

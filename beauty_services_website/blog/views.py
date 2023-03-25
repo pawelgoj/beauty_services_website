@@ -10,7 +10,7 @@ def index(request):
     return render(request, 'blog/index.html', {'posts': posts})
 
 #Tworzymy api restowe by dostać posty
-def api_get_post(rquest):
+def api_get_post(request):
     posts = Post.objects.all().order_by('title')
     json = serializers.serialize("json", posts)
     return HttpResponse(json)
