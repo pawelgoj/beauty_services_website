@@ -1,6 +1,8 @@
+import React, { Component }  from 'react';
+
 
 // Names of components must be written using capital letter.
-function AboutMeComponent(prop) {
+function AboutMeComponent({data}) {
     return (
         <section>
             <h1>O mnie</h1>

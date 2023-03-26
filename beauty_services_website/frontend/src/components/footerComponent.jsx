@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 
 // Names of components must be written using capital letter.
 function FooterComponent(prop) {

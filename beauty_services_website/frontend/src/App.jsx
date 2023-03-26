@@ -9,6 +9,7 @@ import CalendarComponent from './components/calendarComponent';
 import BlogComponent from './components/myBlogComponent';
 import PriceListComponent from './components/priceListComponent';
 import ServicesComponent from './components/servicesComponent';
+import AboutMeContainer from './containers/aboutMeContainer';
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
     <>
       <HeaderComponent />
       <NavBarComponent />
-      <AboutMeComponent />
+      <AboutMeContainer />
       <ServicesComponent />
       <PriceListComponent />
       <CalendarComponent />
