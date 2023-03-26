@@ -1,7 +1,11 @@
+import logging
 from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 from .models import AboutMe
+from os import path
 import base64
+# Folder with media items eg. images
+from beauty_services_website.settings import MEDIA_ROOT
 
 # Create your views here.
 def index(request):
@@ -10,9 +14,14 @@ def index(request):
 
 def about_me(request):
     poll = get_object_or_404(AboutMe, aboutme_id=1)
-    
-    print(poll.image)
+
+    path = str(MEDIA_ROOT / str(poll.image))
+
+    with open(path, "rb") as img_file:
+        image_string = base64.b64encode(img_file.read()).decode()
+
     data = {"results": {
-        "text": poll.text
+        "text": poll.text,
+        "image": image_string
     }}
     return JsonResponse(data)
