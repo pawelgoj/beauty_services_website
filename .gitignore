@@ -8,7 +8,10 @@ __pycache__/
 # react 
 **/build
 **/node_modules
+**/migrations
 package-lock.json
+/.vscode/
+/beauty_services_website/media
 
 # C extensions
 *.so
