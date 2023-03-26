@@ -1,5 +1,6 @@
 from django.db import models
 from blog.models import Image
+from django.utils.html import mark_safe
 
 # Create your models here.
 
@@ -11,3 +12,5 @@ class ImageForGallery(models.Model):
     class Meta:
         verbose_name_plural = "Obrazki w galerii"
         verbose_name = "Obrazek"
+    
+
