@@ -72,20 +72,22 @@ class Appointment(models.Model):
         
 class AboutMe(models.Model):
     aboutme_id = models.AutoField(primary_key=True)
-    
+
     # Upload_to is not necessary because in setting was chosen folder with media. 
     image = models.ImageField(max_length=200, verbose_name="Moje zdjęcie", blank=True, upload_to = 'media')
     text = models.TextField(verbose_name="Opis")
+
+    # to show image in administration panel
+    def img_preview(self):
+        #KKod do pokazania obrazka
+        return mark_safe(f'<img src = "{self.image.url}" width = "300"/>')
+
     class Meta:
         verbose_name_plural = "O mnie"
         verbose_name = "O mnie"
         constraints = [
             models.CheckConstraint(check=models.Q(aboutme_id=1), name='one instance'),
         ]
-    # to show image in administration panel
-    def img_preview(self):
-        #KKod do pokazania obrazka
-        return mark_safe(f'<img src = "{self.image.url}" width = "300"/>')
 
     def __str__(self):
         return 'O mnie'

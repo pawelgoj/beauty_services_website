@@ -48,4 +48,6 @@ class ClientAdmin(admin.ModelAdmin):
         else:
             # Search object of primary key:
             AboutMe.objects.filter(aboutme_id=1).update(text=obj.text, image=obj.image)
+            
+
 
