@@ -7,12 +7,12 @@ const ABOUT_ME_URL = "/business/omnie"
 
 
 const AboutMeContainer = () => {
-    const [aboutMe, setState] = useState({status: "", body: ""});
+    const [aboutMe, setState] = useState({ status: "", body: "" });
     const fetchData = () => {
         fetch(ABOUT_ME_URL, { method: "GET" })
             .then(res => {
                 res.json().then(data => {
-                    setState({status: res.status, body: data.results});
+                    setState({ status: res.status, body: data.results });
                 })
             })
             .catch(err => { setState(err) });

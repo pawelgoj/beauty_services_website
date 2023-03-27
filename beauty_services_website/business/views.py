@@ -1,7 +1,7 @@
 import logging
 from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
-from .models import AboutMe
+from .models import AboutMe, SocialMedia
 from os import path
 import base64
 # Folder with media items eg. images
@@ -24,4 +24,21 @@ def about_me(request):
         "text": poll.text,
         "image": image_string
     }}
+    return JsonResponse(data)
+
+def social_data(request):
+    poll = SocialMedia.objects.all()
+    
+    list_of_items = []
+    for item in poll:
+
+        list_of_items.append({
+            "name": item.name,
+            "link": item.link,
+            "logo": item.logo,
+            "description": item.description
+            })
+        
+        
+    data = {"results": list_of_items}
     return JsonResponse(data)

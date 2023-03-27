@@ -33,7 +33,15 @@ class Contact(models.Model):
 class SocialMedia(models.Model):
     name = models.CharField(max_length=100, verbose_name="Nazwa")
     link = models.CharField(max_length=200, verbose_name="Link")
-    image = models.ImageField(max_length=200, verbose_name="Logo", blank=True)
+    CONTENT_TYPES = [
+        ('Instagram', 'Instagram'),
+        ('Facebook', 'Facebook'),
+        ('Tiktok', 'Tiktok'),
+        ('Pinterest', 'Pinterest')
+    ]
+    logo = models.CharField(choices=CONTENT_TYPES,
+        default='Instagram', max_length=20, verbose_name="Logo")
+
     description = models.CharField(max_length=200, verbose_name="Opis")
 
     class Meta:
