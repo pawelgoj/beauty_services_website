@@ -2,11 +2,11 @@ import React, { Component, useState, useEffect } from 'react';
 import PriceListComponent from '../components/priceListComponent';
 
 // Names of components must be written using capital letter.
-const ABOUT_ME_URL = "/business/omnie"
+const ABOUT_ME_URL = "/business/price_list"
 
 
 const PriceListContainer = () => {
-    const [aboutMe, setState] = useState({ status: "", body: "" });
+    const [priceList, setState] = useState({ status: "", body: "" });
     const fetchData = () => {
         fetch(ABOUT_ME_URL, { method: "GET" })
             .then(res => {
@@ -19,7 +19,7 @@ const PriceListContainer = () => {
     useEffect(fetchData, []);
 
     return (
-        <PriceListComponent />
+        <PriceListComponent status={priceList.status} data={priceList.body} />
     );
 };
 

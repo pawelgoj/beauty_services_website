@@ -1,9 +1,34 @@
 import React, { Component }  from 'react';
 
-// TODO
-function PriceListComponent(prop) {
+
+
+function PriceListComponent({ status, data}) {
+    console.log(status);
+    console.log(data);
+    
     return (
-        <div style={{backgroundColor: "Lightblue" }}>Cennik</div>
+        (status === 200) ?<>
+        <h1 className="display-4 m-2">Cennik</h1>
+        <div className="col-md-6">
+            <table className="table table-striped m-2">
+                <thead>
+                    <tr>
+                        <th scope="col">Nazwa usługi</th>
+                        <th scope="col">Cena</th>
+                    </tr>
+                </thead>
+                {data.map((item) => 
+                <tbody>
+                    <tr>
+                        <th scope="row">{item.name}</th>
+                        <td>{item.price + " zł"}</td>
+                    </tr>
+                </tbody>
+                )}
+            </table>
+        </div>
+        </> 
+        : <></>
     );
 }
 
