@@ -5,11 +5,11 @@ import NavBarComponent from './components/navBarComponent';
 import ContactComponent from './components/contactComponent';
 import CalendarComponent from './components/calendarComponent';
 import BlogComponent from './components/myBlogComponent';
-import PriceListComponent from './components/priceListComponent';
 import ServicesComponent from './components/servicesComponent';
 
 import AboutMeContainer from './containers/aboutMeContainer';
 import FooterContainer from './containers/footerContainer';
+import PriceListContainer from './containers/priceListContainer';
 
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
       <NavBarComponent />
       <AboutMeContainer />
       <ServicesComponent />
-      <PriceListComponent />
+      <PriceListContainer />
       <CalendarComponent />
       <ContactComponent />
       <BlogComponent />

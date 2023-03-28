@@ -24,7 +24,7 @@ function FooterComponent({ status, socialMedia, myContact }) {
                             ))}
                         </div>
                         {(myContact.phone != "") ?
-                            <div className="flex-fill h5">tel. {myContact.phone}</div>
+                            <div className="d-flex justify-content-center h5 pt-2">tel. {myContact.phone}</div>
                             : <></>
                         }
                         <div className="d-flex justify-content-center h5"><p>email:&nbsp;</p><a href={"mailto:" + myContact.email}>{myContact.email}</a></div>

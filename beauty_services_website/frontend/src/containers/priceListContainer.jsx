@@ -1,11 +1,11 @@
 import React, { Component, useState, useEffect } from 'react';
-import AboutMeComponent from '../components/aboutMeComponent';
+import PriceListComponent from '../components/priceListComponent';
 
 // Names of components must be written using capital letter.
 const ABOUT_ME_URL = "/business/omnie"
 
 
-const AboutMeContainer = () => {
+const PriceListContainer = () => {
     const [aboutMe, setState] = useState({ status: "", body: "" });
     const fetchData = () => {
         fetch(ABOUT_ME_URL, { method: "GET" })
@@ -19,9 +19,9 @@ const AboutMeContainer = () => {
     useEffect(fetchData, []);
 
     return (
-        <AboutMeComponent status={aboutMe.status} body={aboutMe.body} />
+        <PriceListComponent />
     );
 };
 
 
-export default AboutMeContainer;
+export default PriceListContainer;

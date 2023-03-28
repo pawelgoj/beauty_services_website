@@ -1,9 +1,10 @@
 import logging
 from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
-from .models import AboutMe, SocialMedia
+from .models import AboutMe, SocialMedia, Service
 from os import path
 import base64
+from .serializers import ServiceSerializer
 # Folder with media items eg. images
 from beauty_services_website.settings import MEDIA_ROOT
 
@@ -26,6 +27,7 @@ def about_me(request):
     }}
     return JsonResponse(data)
 
+
 def social_data(request):
     poll = SocialMedia.objects.all()
     about_me = AboutMe.objects.get(aboutme_id=1)
@@ -44,3 +46,10 @@ def social_data(request):
 
     data = {"results": {"my_contact": my_contact, "social_media": list_of_items}}
     return JsonResponse(data)
+
+
+def price_list(request):
+    data = Service.objects.all()
+    serializer = ServiceSerializer(data, many=True)
+    response = {"results": serializer.data}
+    return JsonResponse(response)
