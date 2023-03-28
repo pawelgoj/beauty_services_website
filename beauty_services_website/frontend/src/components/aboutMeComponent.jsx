@@ -11,13 +11,13 @@ function AboutMeComponent({ status, body }) {
         <section>
             {(status === 200) ?
                 <>
-                    <h1>O mnie </h1>
-                    <img src={image} alt="My image" ></img>
-                    <p> {body.text} </p>
+                    <h1 className="m-4 border-bottom" >O mnie </h1>
+                    <img className="m-4" src={image} alt="My image" ></img>
+                    <p className="m-4"> {body.text} </p>
                 </>
                 :
                 <>
-                    <div style={{height: "300px"}}></div>
+                    <div style={{ height: "300px" }}></div>
                 </>
             }
         </section>

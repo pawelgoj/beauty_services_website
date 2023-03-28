@@ -17,6 +17,7 @@ class Service(models.Model):
     def __str__(self):
         return self.name
 
+
 class Contact(models.Model):
     name = models.CharField(max_length=100, verbose_name="Nick")
     email = models.EmailField(max_length=100, verbose_name="Email")
@@ -29,6 +30,7 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class SocialMedia(models.Model):
     name = models.CharField(max_length=100, verbose_name="Nazwa")
@@ -51,6 +53,7 @@ class SocialMedia(models.Model):
     def __str__(self):
         return self.name
 
+
 class Client(models.Model):
     name = models.CharField(max_length=100, verbose_name="Imię")
     surname = models.CharField(max_length=100, blank=True, verbose_name="Nazwisko")
@@ -65,8 +68,8 @@ class Client(models.Model):
 
     def __str__(self):
         return f'{self.name} {self.surname}'
-    
-    
+
+
 class Appointment(models.Model):
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=False, verbose_name="Data")
@@ -76,14 +79,16 @@ class Appointment(models.Model):
     class Meta:
         verbose_name_plural = "Terminy umówione"
         verbose_name = "Termin"
-        
-        
+
+
 class AboutMe(models.Model):
     aboutme_id = models.AutoField(primary_key=True)
 
     # Upload_to is not necessary because in setting was chosen folder with media. 
     image = models.ImageField(max_length=200, verbose_name="Moje zdjęcie", blank=True, upload_to = 'media')
     text = models.TextField(verbose_name="Opis")
+    email = models.EmailField(max_length=100, blank=True, verbose_name="Email")
+    phone = models.CharField(max_length=15, blank=True, verbose_name="Numer telefonu")
 
     # to show image in administration panel
     def img_preview(self):

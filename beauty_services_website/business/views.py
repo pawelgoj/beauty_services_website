@@ -28,8 +28,11 @@ def about_me(request):
 
 def social_data(request):
     poll = SocialMedia.objects.all()
-    
+    about_me = AboutMe.objects.get(aboutme_id=1)
+
     list_of_items = []
+    my_contact = {"email": about_me.email, "phone": about_me.phone}
+
     for item in poll:
 
         list_of_items.append({
@@ -38,7 +41,6 @@ def social_data(request):
             "logo": item.logo,
             "description": item.description
             })
-        
-        
-    data = {"results": list_of_items}
+
+    data = {"results": {"my_contact": my_contact, "social_media": list_of_items}}
     return JsonResponse(data)
