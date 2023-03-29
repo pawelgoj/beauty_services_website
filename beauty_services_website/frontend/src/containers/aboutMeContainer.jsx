@@ -1,5 +1,5 @@
 import React, { Component, useState, useEffect } from 'react';
-import AboutMeComponent from '../components/aboutMeComponent';
+import AboutMeComponent from '../components/aboutMeComponent/aboutMeComponent';
 
 // Names of components must be written using capital letter.
 const ABOUT_ME_URL = "/business/omnie"

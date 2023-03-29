@@ -15,15 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import routers
 from .views import index
 from django.conf import settings 
 from django.conf.urls.static import static
+from blog import views
 
 admin.site.site_header = 'Królestwo Gabi'
 
+router = routers.DefaultRouter()
+# router.register('posts', views.api_get_post)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('api/', include(router.urls, 'blog')),
     path('blog/', include('blog.urls')),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('api/', include('blog.api_urls')),
     path('business/', include('business.urls')),
     path('', index)

@@ -7,7 +7,7 @@ class Post(models.Model):
     date = models.DateField(auto_now=True, verbose_name="Data")
     content = models.TextField(verbose_name="Treść")
     CONTENT_TYPES = [
-        ('POST', 'Post'),
+        ('Post', 'Post'),
         ('Ogłoszenie', 'Ogłoszenie')
     ]
     content_type = models.CharField(choices=CONTENT_TYPES,

@@ -3,7 +3,7 @@ import React, { Component }  from 'react';
 // TODO
 function ServicesComponent(prop) {
     return (
-        <div style={{ backgroundColor: "lightpurple" }}>Moje usługi</div>
+        <div className="m-4" style={{ backgroundColor: "lightpurple" }}>Moje usługi</div>
     );
 }
 

@@ -4,7 +4,13 @@ import React, { Component }  from 'react';
 
 function BlogComponent(prop) {
     return (
-        <div style={{backgroundColor: "orange" }}>Zaprazam na mój blog</div>
+        <div>
+            <h1 class="display-6">Zapraszam również na mój blog</h1>
+            <p>Znajdziesz tam ciekawe artykuły na temat kosmetologii:&nbsp;
+                 <a href=''>Link do bloga</a>
+            </p>
+            <h2 class="h4">O to niektóre artykuły:</h2>
+        </div>
     );
 }
 

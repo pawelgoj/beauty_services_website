@@ -1,0 +1,20 @@
+#media-query-float-left {
+    display: block;
+    width: 300px;
+    height: 300px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.end-of-float {
+    clear: both;
+}
+
+
+@media only screen and (min-width: 600px) {
+
+    #media-query-float-left {
+        display: inline;
+        float: left;
+    }
+}

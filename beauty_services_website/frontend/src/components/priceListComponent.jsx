@@ -8,9 +8,9 @@ function PriceListComponent({ status, data}) {
     
     return (
         (status === 200) ?<>
-        <h1 className="display-4 m-2">Cennik</h1>
-        <div className="col-md-6">
-            <table className="table table-striped m-2">
+        <h1 className="display-4 m-4">Cennik</h1>
+        <div className="col-md-6 m-4">
+            <table className="table table-striped my-2">
                 <thead>
                     <tr>
                         <th scope="col">Nazwa usługi</th>
