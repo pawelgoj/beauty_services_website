@@ -4,12 +4,12 @@ import HeaderComponent from './components/headerComponent';
 import NavBarComponent from './components/navBarComponent';
 import ContactComponent from './components/contactComponent';
 import CalendarComponent from './components/calendarComponent';
-import BlogComponent from './components/myBlogComponent';
 import ServicesComponent from './components/servicesComponent';
 
 import AboutMeContainer from './containers/aboutMeContainer';
 import FooterContainer from './containers/footerContainer';
 import PriceListContainer from './containers/priceListContainer';
+import BlogContainer from './containers/blogContainer';
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
       <PriceListContainer />
       <CalendarComponent />
       <ContactComponent />
-      <BlogComponent />
+      <BlogContainer />
       <FooterContainer />
 
     </>

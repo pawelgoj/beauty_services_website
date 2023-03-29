@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import FooterComponent from '../components/footerComponent';
 
 // Names of components must be written using capital letter.

@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import AboutMeComponent from '../components/aboutMeComponent/aboutMeComponent';
 
 // Names of components must be written using capital letter.
