@@ -2,6 +2,7 @@
 Website of a beauty services company created using django
 
 ## Work in progress
+This project is not functional yet. 
 
 # Tools
 
